@@ -1,0 +1,15 @@
+<input 
+    type="text"
+    class="form-group"
+    (keyup.enter)="createData(title)"
+    #title
+    />
+<ul class="list-group">
+    <li *ngFor="let post of posts"
+        class="list-group-item"
+        >
+    <button (click)="updateData(post)">Update</button>
+    <button (click)="deleteData(post)">Delete</button>
+   <a [routerLink]="['/post', post.id, post.userId]">{{post.title}} </a> 
+    </li>
+</ul>
